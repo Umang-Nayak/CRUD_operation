@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Employee Information</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        body {
+            background-color: purple;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            width: 50%;
+            margin: 20px auto;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: gold;
+            color: black;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body align="center">
+
+    <h1>
+        <i class="fas fa-star"></i>
+        Insert Employee Information
+        <i class="fas fa-star"></i>
+    </h1>
+
+    <form action="/insert_employee/" method="post">
+        {% csrf_token %}
+
+        <input type="text" id="e_fname" name="e_fname" placeholder="First Name" required>
+        <input type="text" id="e_lname" name="e_lname" placeholder="Last Name" required>
+        <input type="text" id="e_contact" name="e_contact" placeholder="Contact" required>
+        <input type="text" id="e_address" name="e_address" placeholder="Address" required>
+        <input type="email" id="e_email" name="e_email" placeholder="Email" required>
+        <input type="password" id="e_password" name="e_password" placeholder="Password" required>
+
+        <button type="submit">Insert Employee</button>
+    </form>
+
+</body>
+</html>

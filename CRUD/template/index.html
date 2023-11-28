@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        body {
+            background-color: purple;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            width: 100%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: purple;
+        }
+
+        th, td {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 1px solid white;
+        }
+
+        th {
+            background-color: black;
+        }
+
+    </style>
+</head>
+<body align="center">
+
+<h1>
+    <i class="fas fa-star"></i>
+    Employee Information
+    <i class="fas fa-star"></i>
+</h1>
+    <h2>
+        <a href="/ei/" style="color:gold">
+            <i class="fa-solid fa-database"></i>
+        </a>
+    </h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID &nbsp; <i class="fa-solid fa-id-card"></i></th>
+                <th>First-Name &nbsp; <i class="fa-solid fa-id-badge"></i></th>
+                <th>Last-Name &nbsp; <i class="fa-solid fa-id-badge"></i></th>
+                <th>Contact &nbsp; <i class="fas fa-phone"></i></th>
+                <th>Address &nbsp; <i class="fa-solid fa-location-dot"></i></th>
+                <th>Email &nbsp; <i class="fa-solid fa-envelope"></i></th>
+                <th>Password &nbsp; <i class="fa-solid fa-lock"></i></th>
+                <th>Action &nbsp; <i class="fa-solid fa-exclamation"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for data in emp %}
+            <tr>
+                <td>{{data.e_id}}</td>
+                <td>{{data.e_fname}}</td>
+                <td>{{data.e_lname}}</td>
+                <td>{{data.e_contact}}</td>
+                <td>{{data.e_address}}</td>
+                <td>{{data.e_email}}</td>
+                <td>{{data.e_password}}</td>
+                <td>
+                    <a href="/update_detail/{{data.e_id}}" style="color:gold"> <i class="fa-solid fa-pen"></i></a>
+                    &nbsp; &nbsp;
+                    <a href="/delete_detail/{{data.e_id}}" style="color:gold"> <i class="fa-solid fa-trash"></i></a>
+                </td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+</body>
+</html>
